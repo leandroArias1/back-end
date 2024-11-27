@@ -5,25 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perifericos</title>
     <link rel="stylesheet" href="/public/css/style.css">
+
+<style>
+    h1.titulo{
+        font-size: 40px;
+        color: #ccc;
+    }
+
+    .add{
+        text-decoration: none;
+        color: #ccc;
+        border-radius: 3px;
+        background-color: #b11623;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+.card {
+    border: 5px solid #b11623; /* Borde alrededor de los productos */
+    background-color: #292c37;
+    border-radius: 5px;
+}
+
+.card img {
+    width: 100%; /* Hacer que las imágenes ocupen todo el ancho del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+}
+
+.product{
+    color: #ccc;
+    font-weight: bold
+}
+
+.titulo {
+    font-size: 40px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+</style>
+
 </head>
 <body>
     <%- include('../partials/header')%>
 
 
     <div class="container">
-        <h1>Perifericos</h1>
-        <a href="/perifericos/create">Añadir Periferico</a>
+        <h1 class="titulo" >Perifericos</h1>
+        <a href="/perifericos/create" class="add">Añadir Periferico</a>
+        <br><br><br>
 
         <div>
             <% perifericos.forEach(periferico => {%>
+                <div class="card">
                 <div>
                     <img src="/images/<%=periferico.imagen%>" alt="<%=periferico.nombre%>">
                 </div>    
-                <h2><%=periferico.nombre%></h2>
-                <p><%=periferico.descripcion%></p>
-                <p>$<%=periferico.precio%></p>
-                <p><strong>Categoria: <%=periferico.nombre%></strong></p>
-
+                <h2 class="product name"><%=periferico.nombre%></h2>
+                <p class="product description"><%=periferico.descripcion%></p>
+                <p class="product price">$<%=periferico.precio%></p>
+                <p class="product category"><strong>Categoria: <%=periferico.nombre%></strong></p>
+                </div>
                 <div>
                     <a href="/perifericos/<%=periferico.id%>/edit">Editar Periferico</a>
 

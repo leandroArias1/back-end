@@ -16,7 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get("/", (req, res) => { res.render('home')}); //home
+router.get("/", (req, res) => { res.render('home', {
+    title: "Gamer's Edge",
+    pathToCss: "../public/css"
+})}); //home
 
 router.get('/perifericos', perifericoController.list); //rutas crud
 
