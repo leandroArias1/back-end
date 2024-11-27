@@ -24,7 +24,7 @@ const Periferico = sequelize.define('Periferico',{
         references:{
             model: 'categorias',
             key: 'id'
-        }//referencia a MySQL
+        }
     }
 },
 
