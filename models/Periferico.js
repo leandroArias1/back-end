@@ -1,39 +1,34 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Categoria = require('./Categoria');
+const Categoria = require('./Categoria')
 
-const Periferico = sequelize.define('Periferico',{
-    nombre:{
+const Periferico = sequelize.define('Periferico', {
+    nombre: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-
-    descripcion:{
+    descripcion: {
+        type: DataTypes.TEXT
+    },
+    precio: {
+        type: DataTypes.INTEGER
+    },
+    imagen: {
         type: DataTypes.STRING
     },
-    precio:{
+    categoria_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    imagen:{
-        type: DataTypes.STRING
-    },
-    categoria_id:{
-
-        type: DataTypes.INTEGER,
-        references:{
-            model: 'categorias',
+        references: {
+            model: 'categoria',
             key: 'id'
-        }
+            }
     }
 },
-
     {
-        tableName: 'PERIFERICOS',
+        tableName: 'perifericos',
         timestamps: false
-    });
+});
 
-    Periferico.belongsTo(Categoria, { foreignKey: 'categoria_id' });
+    Periferico.belongsTo(Categoria, { foreignKey: 'categoria_id'} );
 
-
-    module.exports = Periferico;
+module.exports = Periferico;

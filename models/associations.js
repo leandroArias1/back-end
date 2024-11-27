@@ -1,8 +1,13 @@
 const Categoria = require('./Categoria');
 const Periferico = require('./Periferico');
+const Usuario = require('./Usuario');
 
-//Definir las Asociaciones
-Categoria.hasMany(Periferico, {foreignKey: 'categoria_id'});
-Perifericos.belongsTo(Categoria, {foreignKey: 'categoria_id'});
+//defenir las asociaciones
+Categoria.hasMany(Periferico, { foreignKey: 'categoria_id' });
+Periferico.belongsTo(Categoria, { foreignKey: 'categoria_id' });
 
-module.exports = {Categoria,Periferico};
+
+Periferico.hasMany(Usuario, { foreignKey: 'id_usuario' });
+Usuario.belongsTo(Periferico, { foreignKey: 'id_usuario' });
+
+module.exports = { Categoria, Periferico, Usuario };
