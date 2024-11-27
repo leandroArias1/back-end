@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perifericos</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     <%- include('../partials/header')%>
@@ -22,7 +22,7 @@
                 <h2><%=periferico.nombre%></h2>
                 <p><%=periferico.descripcion%></p>
                 <p>$<%=periferico.precio%></p>
-                <p><strong>Categoria: </strong></p>
+                <p><strong>Categoria: <%=periferico.nombre%></strong></p>
 
                 <div>
                     <a href="/perifericos/<%=periferico.id%>/edit">Editar Periferico</a>
