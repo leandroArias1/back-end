@@ -16,9 +16,19 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-router.get("/", (req, res) => { res.render('home')});
+router.get("/", (req, res) => { res.render('home')}); //home
 
-router.get('/perifericos', perifericoController.list);
+router.get('/perifericos', perifericoController.list); //rutas crud
+
+router.get('/perifericos/create', perifericoController.create);
+router.post('/perifericos/create', upload.single('imagen'), perifericoController.store);
+
+router.get('/perifericos/:id/edit', perifericoController.edit);
+router.put('/perifericos/:id', upload.single('imagen'), perifericoController.update);
+
+router.delete('/perifericos/:id', perifericoController.destroy);
+
+
 
 
 module.exports = router;

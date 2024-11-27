@@ -24,8 +24,20 @@
                 <p>$<%=periferico.precio%></p>
                 <p><strong>Categoria: </strong></p>
 
+                <div>
+                    <a href="/perifericos/<%=periferico.id%>/edit">Editar Periferico</a>
+
+                    <form action="/perifericos/<%=periferico.id%>?_method=DELETE" method="POST">
+
+                        <button type="submit">Eliminar Periferico</button>
+                        
+                    </form>
+                </div>
+
             <% }) %>
         </div>
+
+        <a href="/">Voler a la pagina principal</a>
 
     </div>
 

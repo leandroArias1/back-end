@@ -5,4 +5,4 @@ const Periferico = require('./Periferico');
 Categoria.hasMany(Periferico, {foreignKey: 'categoria_id'});
 Perifericos.belongsTo(Categoria, {foreignKey: 'categoria_id'});
 
-module.exports = {Categoria,  Periferico};
+module.exports = {Categoria,Periferico};
